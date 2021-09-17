@@ -13,6 +13,11 @@ sample env
 make up
 ```
 
+#### apibホットリロード
+```
+aglio -i hoghoge.apib -s
+```
+
 ## Settings
 
 ### documents
