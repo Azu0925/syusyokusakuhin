@@ -1,0 +1,75 @@
+FORMAT: 1A
+<!-- include(datastructure.apib) -->
+HOST: https://example.com/api/v1
+
+# post 
+投稿系API
+## 作品投稿 [POST /post]
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + detail: ラーメン食べたい (string, required) - 投稿文章
+        + image_id: fugefuge (string) - 投稿画像ファイル名
+        + user_id: hogehoge001 (string, required) - 投稿者ID
+    
++ Response 200 (application/json)
+    + Attributes (success)
+        + detail
+            + id: kfiue89cew (string, required) - post_id
+
++ Response 400 (application/json)
+    + Attributes (clientError)
+
+## 投稿内容 [GET /post/:id]
++ Request (application/json)
+    + Attributes
+        + id: kfiue89cew (string, required) - post_id
+
++ Response 200 (application/json)
+    + Attributes (success)
+        + detail (posting)
+
++ Response 400 (application/json)
+    + Attributes (clientError)
+
+## 投稿編集 [PUT /post/:id]
+いらなくね？
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + detail: ラーメン食べたい (string, required) - 投稿文章
+
++ Response 400 (application/json)
+    + Attributes (clientError)
+
+## 投稿削除 [DELETE /post/:id]
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + id: kfiue89cew (string, required) - post_id
+
++ Response 200 (application/json)
+    + Attributes (success)
+
++ Response 400 (application/json)
+    + Attributes (clientError)
+        
+
+## 投稿一覧 [GET /posts/:id]
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Attributes (success)
+        + detail (array[posting])
+
++ Response 400 (application/json)
+    + Attributes (clientError)
