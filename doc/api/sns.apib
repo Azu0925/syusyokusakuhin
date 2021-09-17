@@ -4,54 +4,9 @@ HOST: https://example.com/api/v1
 # SNS API
 就職作品のSNSのAPI
 
-## ユーザ登録 [POST /user]
-+ Request (application/json)
-    + body
-    ```json
-    {
-        "id": "",
-        "name": "",
-        "profile": "",
-        "user_url": "",
-        "email": "",
-        "password": "",
-        "theme_color": ""
-    }
-    ```
-+ Response 200 (application/json)
-    成功
-    + body
-    ```json
-    {
-        "result": "Suceess",
-        "detail": {
-            "token": ""
-        }
-    }
-    ```
-
-+ Response 400 (application/json)
-    送られてきた値に不備がある場合
-    + body
-    ```json
-    {
-        "result": "Error",
-        "message": "Bad Request"
-    }
-    ```
-
-## ユーザ情報変更 [PUT /user]
-+ Request (application/json)
-
-## ユーザ情報取得 [GET /user]
-
-## ユーザ削除 [DELETE /user]
-
-## トークン発行 [POST /token]
-
-## プロフィール取得 [GET /profile/:id]
 
 ## 投稿 [POST /post]
+
 
 ## 投稿内容 [GET /post/:id]
 

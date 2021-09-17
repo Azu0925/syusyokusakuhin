@@ -1,0 +1,19 @@
+FORMAT: 1A
+<!-- include(datastructure.apib) -->
+HOST: https://example.com/api/v1
+
+# token [/token]
+トークン系API
+## トークン発行 [POST]
++ Request (application/json)
+  + Attributes
+    + id: hogehoge001 (string, required) - ユーザID
+    + password: password01 (string, required) - パスワード
+
++ Response 200 (application/json)
+    + Attributes (success)
+        + detail
+            + token: akjy9eadrq@3d (string, required) -トークン
+
++ Response 400 (application/json)
+    + Attributes (clientError)

@@ -1,0 +1,77 @@
+FORMAT: 1A
+<!-- include(datastructure.apib) -->
+HOST: https://example.com/api/v1
+
+# User [/user]
+ユーザ系API
+## ユーザ登録 [POST]
++ Request (application/json)
+    + Attributes (User)
+
++ Response 200 (application/json)
+    成功
+    + Attributes (success)
+        + detail
+            + token: akjy9eadrq@3d (string, required) -トークン
+
++ Response 400 (application/json)
+    送られてきた値に不備がある場合
+    + Attributes (clientError)
+
+## ユーザ情報取得 [GET /user]
+自分自身のユーザ情報の取得
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + id: hogehoge001 (string, required) - ユーザID
+
++ Response 200 (application/json)
+    成功
+    + Attributes (success)
+        + detail (User)
+            + icon_path: /foobar/icon (string, required) - アイコンファイルパス
+            + header_path: /hogehoge/file (string, required) - ヘッダーファイルパス
+
++ Response 400 (application/json)
+    送られてきた値に不備がある場合
+    + Attributes (clientError)
+
+## ユーザ情報変更 [PUT /user]
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + id: hogehoge001 (string, required) - ユーザID
+        + name: nickname (string) - 名前
+        + profile: プロフィール (string) - プロフィール
+        + user_url: https://example.com (string) - URLリンク
+        + email: example@hoge.com (string) - メールアドレス
+        + password: password01 (string) - パスワード
+        + theme_color: #ffffff (string) - テーマカラー16進数
+    
++ Response 200 (application/json)
+    + Attributes (success)
+
++ Response 400 (application/json)
+    + Attributes (clientError)
+
+## ユーザ削除 [DELETE /user]
+ユーザの論理削除を行う。
++ Request (application/json)
+    + Headers
+        ```
+        Authorization: Bearer {token}
+        ```
+    + Attributes
+        + id: hogehoge001 (string, required) - ユーザID
+
++ Response 200 (application/json)
+    + Attributes (success)
+
++ Response 400 (application/json)
+    + Attributes (clientError)
