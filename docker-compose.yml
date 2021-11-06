@@ -4,7 +4,7 @@ services:
   api:
     container_name: horizon_api
     build:
-      context: ./api
+      context: ./horizon-api
       dockerfile: Dockerfile
     ports:
       - '3000:8080'
@@ -26,7 +26,4 @@ services:
 
 volumes: 
   datastore:
-    driver: localmysql:
-    image: mysql
-    container_name: horizon_mysql
-    env_file
+    driver: local
