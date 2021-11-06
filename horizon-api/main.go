@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"horizon-api/middleware"
 )
 
 func main() {
