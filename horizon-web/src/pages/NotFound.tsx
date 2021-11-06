@@ -1,17 +1,13 @@
 import React from 'react'
 
-const NotFound = ():JSX.Element => {
+const NotFound = (): JSX.Element => {
   return (
     <>
-      <header>
-
-      </header>
+      <header></header>
       <main>
         <p>Sorry, Not found page</p>
       </main>
-      <footer>
-
-      </footer>
+      <footer></footer>
     </>
   )
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
 import Router from './route/Router'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Router />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
