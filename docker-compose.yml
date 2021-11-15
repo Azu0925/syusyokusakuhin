@@ -13,7 +13,7 @@ services:
 
   mysql:
     image: mysql
-    container_name: share_reader_mysql
+    container_name: horizon_mysql
     env_file: ./mysql/mysql.env
     environment:
       - TZ=Asia/Tokyo
@@ -23,6 +23,15 @@ services:
     volumes: 
       - datastore:/var/lib/mysql
       - ./mysql/database:/docker-entrypoint-initdb.d
+  
+  neo4j:
+    image: neo4j
+    container_name: horizon_neo4j
+    ports:
+    - 7474:7474
+    - 7687:7687
+    volumes:
+    - ./ff/volumes/neo4j/data:/data
 
 volumes:
   datastore:
