@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Router from './route/Router'
+import Router from './routes/Router'
 import { RecoilRoot } from 'recoil'
 
 function App() {

@@ -3,5 +3,5 @@ USE `horizon`;
 
 CREATE TABLE `users` (
   `user_id` int(32) NOT NULL,
-  `name` text NOT NULL
+  `name` text NOT NULL,
 )

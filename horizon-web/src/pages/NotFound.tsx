@@ -5,7 +5,7 @@ const NotFound = (): JSX.Element => {
     <>
       <header></header>
       <main>
-        <p>Sorry, Not found page</p>
+        <p>Sorry, Not found page :{')'}</p>
       </main>
       <footer></footer>
     </>
