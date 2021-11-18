@@ -23,6 +23,16 @@ services:
     volumes: 
       - datastore:/var/lib/mysql
       - ./mysql/database:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=MySQL
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+       - 8090:80
   
   neo4j:
     image: neo4j
@@ -35,4 +45,4 @@ services:
 
 volumes:
   datastore:
-    driver: local1
+    driver: local
