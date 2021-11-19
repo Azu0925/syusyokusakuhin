@@ -1,6 +1,8 @@
 package main
 
 import (
+	"horizon-api/controller"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -10,7 +12,7 @@ func main() {
 	{
 		v1 := apiR.Group("/v1")
 		{
-			v1.POST("/user")
+			v1.POST("/user", controller.UserAdd)
 			v1.GET("/user/:id")
 			v1.PUT("/user/:id")
 			v1.DELETE("/user/:id")

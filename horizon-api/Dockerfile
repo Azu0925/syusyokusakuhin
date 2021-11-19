@@ -1,7 +1,7 @@
 FROM golang:1.17
 
-WORKDIR /go/src
+WORKDIR /go/src/horizon-api
 
-COPY ./ ./
+COPY ./go.mod ./
 
 RUN go mod download

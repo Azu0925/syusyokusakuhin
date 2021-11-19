@@ -8,8 +8,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3000:8080'
-    command: go run .
+    command: go run main.go
     tty: true
+    volumes:
+      - ./horizon-api:/go/src/horizon-api
 
   mysql:
     image: mysql
